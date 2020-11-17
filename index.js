@@ -2,7 +2,6 @@ let {app, BrowserWindow, ipcMain} = require("electron");
 const {autoUpdater, AppUpdater} = require("electron-updater");
 if(require("electron-squirrel-startup")) app.quit();
 const electronLog = require("electron-log");
-const isDev = require("electron-is-dev");
 
 electronLog.transports.console.format = '{h}:{i}:{s} {text}';
 
@@ -23,9 +22,8 @@ function ligar(){
     const win = new BrowserWindow({
 
     });
-    if (isDev) {
-        autoUpdater.updateConfigPath = require("path").join(__dirname, 'app-update.yml');
-    }
+    const server = "";
+    const feed = `${server}/update/${process.platform}/${app.getVersion()}`;
     electronLog.log("Started scorpio!");
     win.loadURL("http://localhost/login");
 

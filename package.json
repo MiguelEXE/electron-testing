@@ -25,32 +25,28 @@
   },
   "publisher": "TeamCM",
   "build": {
+    "appId": "com.scorpio.teamcm",
     "files": [
       "**/*",
       "build/icon.*"
     ],
     "squirrelWindows": {
       "iconUrl": "http://localhost/favicon.ico",
-      "msi": false,
-      "remoteReleases": "https://github.com/MiguelEXE/electron-testing"
+      "msi": false
     },
     "win": {
       "target": "squirrel",
       "icon": "http://localhost/favicon.ico"
     },
     "publish": {
-      "provider": "github",
-      "protocol": "https",
-      "host": "github.com",
-      "owner": "MiguelEXE",
-      "repo": "electron-testing",
-      "private": false,
-      "releaseType": "draft"
+      "provider": "generic",
+      "url": "http://electron-testing.glitch.me/",
+      "channel": "latest",
+      "publishAutoUpdate": true
     }
   },
   "dependencies": {
     "dotenv": "^8.2.0",
-    "electron-is-dev": "^1.2.0",
     "electron-log": "^4.3.0",
     "electron-squirrel-startup": "^1.0.0",
     "electron-updater": "^4.3.5"
