@@ -1,7 +1,7 @@
 {
   "name": "Scorpio",
   "main": "index.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": {
     "type": "github",
     "url": "https://github.com/TeamCM/scorpio-desktop"
@@ -10,7 +10,8 @@
   "scripts": {
     "start": "electron .",
     "test": "electron .",
-    "dist": "electron-builder --win"
+    "dist": "electron-builder --win",
+    "publish1": "electron-builder --publish always"
   },
   "devDependencies": {
     "electron": "^10.1.5",
@@ -31,14 +32,25 @@
     "squirrelWindows": {
       "iconUrl": "http://localhost/favicon.ico",
       "msi": false,
-      "remoteReleases": "https://github.com/TeamCM/scorpio-desktop"
+      "remoteReleases": "https://github.com/MiguelEXE/electron-testing"
     },
     "win": {
       "target": "squirrel",
       "icon": "http://localhost/favicon.ico"
+    },
+    "publish": {
+      "provider": "github",
+      "protocol": "https",
+      "host": "github.com",
+      "owner": "MiguelEXE",
+      "repo": "electron-testing",
+      "private": false,
+      "releaseType": "draft"
     }
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
+    "electron-is-dev": "^1.2.0",
     "electron-log": "^4.3.0",
     "electron-squirrel-startup": "^1.0.0",
     "electron-updater": "^4.3.5"
